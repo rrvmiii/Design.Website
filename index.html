@@ -1,0 +1,425 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacrgy Tool😈</title>
+    <link rel="icon" type="image/x-icon" href="https://logincdn.msftauth.net/16.000.30004.15/images/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #1b1b1b;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://logincdn.msauth.net/shared/1.0/content/images/backgrounds/2_11d9e3bcdfede9ce5ce5ace2d129f1c4.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            width: 440px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            animation: rgb-border 5s infinite linear;
+        }
+
+        @keyframes rgb-border {
+            0% { border-color: #00bcd4; }
+            25% { border-color: #ff5722; }
+            50% { border-color: #e91e63; }
+            75% { border-color: #4caf50; }
+            100% { border-color: #00bcd4; }
+        }
+
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0067b8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        button.green {
+            background-color: #4caf50;
+        }
+
+        button.green:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .bottom {
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            font-size: 15px;
+            margin-top: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            transition: background 0.3s ease;
+        }
+
+        .bottom img {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+        }
+
+        .bottom:hover {
+            background-color: #f0f0f0;
+        }
+
+        .footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Log Section Styling */
+        .log-section {
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .log-section p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Toast Messages */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            input[type="text"],
+            input[type="password"],
+            input[type="file"],
+            input[type="number"],
+            button {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="accountForm">
+            <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4xmJXNNMjl28NAFHYLoK5OyWIY9x58SETOg&usqp=CAU" alt="New Logo">
+            <div class="forms-container">
+                <div class="forms">
+                    <!-- First Section: Enter Key -->
+                    <div class="first">
+                        <h2>Sign in to my world😇</h2>
+                        <div class="form-group">
+                            <input type="text" id="codeInput" placeholder="What's your Key🙃" required>
+                        </div>
+                        <p class="error-message" id="errorMessage">Invalid code! Please contact hacrgy.</p>
+                        <button type="button" class="next-btn" id="nextButton">Next</button>
+                    </div>
+
+                    <!-- Second Section: Choose Mode -->
+                    <div class="second hidden">
+                        <p><span class="arrow-btn">&#8592;</span> <span class="email">tool by hacrgy</span></p>
+                        <h2>Choose Mode😘</h2>
+                        <div class="form-group">
+                            <button type="button" id="generateAccounts">Generate Accounts</button>
+                            <button type="button" id="useTextFile">Use txt File</button>
+                            <!-- إضافة عنصر اختيار الملف -->
+                            <input type="file" id="fileInput" accept=".txt" style="display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Third Section: Generate Accounts -->
+                    <div class="third hidden">
+                        <p><span class="arrow-btn">&#8592;</span> <span class="email">tool by hacrgy</span></p>
+                        <h2>Instagram Accounts🥵</h2>
+                        <div class="form-group">
+                            <input type="text" id="tempEmailSite" placeholder="https://moakt.com/ar" required>
+                            <input type="text" id="username" placeholder="fake.account" required>
+                            <input type="text" id="password" placeholder="Password" required> <!-- Password visible -->
+                            <button type="button" id="generateNext">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Fourth Section: IG Tool -->
+                    <div class="fourth hidden">
+                        <p><span class="arrow-btn">&#8592;</span> <span class="email">tool by hacrgy</span></p>
+                        <h2>IG Tool😱</h2>
+                        <div class="form-group">
+                            <input type="text" id="followUsername" placeholder="Follow">
+                            <input type="text" id="reportUsername" placeholder="Report">
+                            <input type="number" id="repeatCount" placeholder="How many times to repeat?" min="1" required>
+                            <button type="button" id="startProcess" class="green">Start Process</button>
+                        </div>
+                    </div>
+
+                    <!-- Fifth Section: Log Section -->
+                    <div class="fifth hidden">
+                        <p><span class="arrow-btn">&#8592;</span> <span class="email">tool by hacrgy</span></p>
+                        <h2>Log Section</h2>
+                        <div class="log-section" id="logSection">
+                            <!-- Log messages will appear here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="bottom" id="hacrgyButton">
+            <img src="https://logincdn.msauth.net/shared/1.0/content/images/signin-options_4e48046ce74f4b89d45037c90576bfac.svg">
+            <span>Hacrgy is Back🪬</span>
+        </div>
+    </div>
+
+    <div id="footer" role="contentinfo" class="footer">
+        <a href="https://www.instagram.com/rrvmiii/">Instagram</a>
+        <a href="https://www.instagram.com/rrvmiii/">@rrvmiii🥷🏻💋</a>
+        <a href="#" role="button">...</a>
+    </div>
+
+    <!-- Toast Message -->
+    <div id="toast" class="toast hidden">This is a toast message!</div>
+
+    <script>
+        // دالة عامة لإخفاء وإظهار الأقسام
+        function toggleSection(sectionToShow, sectionsToHide) {
+            sectionsToHide.forEach(section => section.classList.add('hidden'));
+            sectionToShow.classList.remove('hidden');
+        }
+
+        // دالة لإضافة رسائل إلى قسم السجلات
+        function addLog(message) {
+            const logEntry = document.createElement('p');
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logSection.appendChild(logEntry);
+        }
+
+        // دالة لعرض رسائل Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
+
+        // إظهار وإخفاء رسالة التحميل
+        function showLoading() {
+            document.getElementById('loading').classList.remove('hidden');
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').classList.add('hidden');
+        }
+
+        // إرسال البيانات إلى الخادم
+        async function sendData(url, data) {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            return await response.json();
+        }
+
+        // تحسين التفاعل مع الأزرار
+        const nextButton = document.querySelector('#nextButton');
+        const arrowButton = document.querySelector('.arrow-btn');
+        const codeInput = document.querySelector('#codeInput');
+        const errorMessage = document.querySelector('#errorMessage');
+        const generateAccountsButton = document.querySelector('#generateAccounts');
+        const useTextFileButton = document.querySelector('#useTextFile');
+        const secondSection = document.querySelector('.second');
+        const thirdSection = document.querySelector('.third');
+        const fourthSection = document.querySelector('.fourth');
+        const fifthSection = document.querySelector('.fifth');
+        const hacrgyButton = document.querySelector('#hacrgyButton');
+        const generateNextButton = document.querySelector('#generateNext');
+        const startProcessButton = document.querySelector('#startProcess');
+        const logSection = document.querySelector('#logSection');
+        const validCodes = ["hacrgytool0123", "hacrgytools12301"];
+
+        // إضافة وظيفة اختيار الملف
+        const fileInput = document.getElementById('fileInput');
+
+        useTextFileButton.addEventListener('click', () => {
+            fileInput.click(); // فتح نافذة اختيار الملف
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0]; // الحصول على الملف المختار
+            if (file && file.type === "text/plain") {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const fileContent = e.target.result; // قراءة محتوى الملف
+                    addLog(`File Content: ${fileContent}`); // عرض المحتوى في قسم السجلات
+                    toggleSection(fourthSection, [secondSection]); // الانتقال إلى الواجهة التالية
+                };
+                reader.readAsText(file); // قراءة الملف كنص
+            } else {
+                showToast("Please select a valid .txt file.");
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            const enteredCode = codeInput.value.trim();
+            if (validCodes.includes(enteredCode)) {
+                toggleSection(secondSection, [document.querySelector('.first')]);
+                errorMessage.style.display = 'none';
+            } else {
+                errorMessage.style.display = 'block';
+                showToast("Invalid code! Please try again.");
+            }
+        });
+
+        generateAccountsButton.addEventListener('click', () => {
+            toggleSection(thirdSection, [secondSection]);
+        });
+
+        generateNextButton.addEventListener('click', () => {
+            const tempEmailSite = document.getElementById('tempEmailSite').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (!tempEmailSite || !username || !password) {
+                showToast("Please fill in all fields.");
+                return;
+            }
+            toggleSection(fourthSection, [thirdSection]);
+        });
+
+        startProcessButton.addEventListener('click', async () => {
+            showLoading();
+            const data = {
+                website_url: document.getElementById('tempEmailSite').value,
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+                birth_date: "1999/11/09", // يمكن تعديله حسب الحاجة
+            };
+
+            const response = await sendData("/create_account", data);
+            hideLoading();
+            if (response.error) {
+                showToast(response.error);
+            } else {
+                showToast(response.message);
+            }
+        });
+
+        arrowButton.addEventListener('click', () => {
+            toggleSection(document.querySelector('.first'), [secondSection, thirdSection, fourthSection, fifthSection]);
+        });
+
+        hacrgyButton.addEventListener('click', () => {
+            window.location.href = "https://www.instagram.com/rrvmiii/";
+        });
+    </script>
+</body>
+</html>
