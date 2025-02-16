@@ -2,7 +2,7 @@
 
 tutorial :
 
-Link Site : https://rrvmiii.github.io/website-Hacrgy
+Link Site : https://rrvmiii.github.io/Website-Hacrgy
 
 Enjoy :)
 
